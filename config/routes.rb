@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'items/index'
+  get 'items/show'
+  root 'departments#index'
+  get '/departments', to: 'departments#index'
+  get '/department/:id', to: 'departments#show'
+
+  resources :departments
 end
